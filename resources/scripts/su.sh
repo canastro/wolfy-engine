@@ -14,8 +14,8 @@ cd libsodium
 ./configure && make check sudo make install sudo ldconfig
 
 echo "Installing zeromq...."
-sudo apt-get install libtool pkg-config build-essential autoconf automake
-sudo apt-get install libzmq-dev
+sudo apt-get install libtool pkg-config build-essential autoconf automake -y
+sudo apt-get install libzmq-dev -y
 wget http://download.zeromq.org/zeromq-4.1.2.tar.gz
 tar -xvf zeromq-4.1.2.tar.gz
 cd zeromq-4.1.2

@@ -9,10 +9,12 @@ const Engine = require('./engine');
 const boot = require('./boot');
 const engineWorker = require('./engine/worker');
 
+const DB_NAME = process.env.DB_NAME || 'stocks';
+
 const numCPUs = require('os').cpus().length;
 let workersCount = 0;
 
-boot('mongodb://localhost/stocks', {
+boot(`mongodb://localhost/${DB_NAME}`, {
     env: 'development'
 });
 

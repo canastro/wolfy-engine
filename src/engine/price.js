@@ -4,10 +4,13 @@ const winston = require('winston');
 const moment = require('moment-timezone');
 const request = require('request');
 const { Candle, Price, Stock } = require('wolfy-models');
-const lastPeriod = require('../utils/date').lastPeriod;
 const zmq = require('zmq');
+
+const lastPeriod = require('../utils/date').lastPeriod;
+const ZEROMQ_PORT = process.env.ZEROMQ_PORT || 9998;
+
 const socket = zmq.socket('pub');
-socket.connect('tcp://127.0.0.1:9998');
+socket.connect(`tcp://127.0.0.1:${ZEROMQ_PORT}`);
 
 /**
  * @name transformPrice

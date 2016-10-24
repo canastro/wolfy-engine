@@ -1,9 +1,9 @@
 #!/bin/sh
 
-echo "Installing nvm..."
-curl https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
-source ~/.profile
-
 echo "Installing node version..."
-nvm install 6
-nvm alias default 6
+curl -sL https://deb.nodesource.com/setup_6.x | -E bash -
+apt-get install -y nodejs
+
+echo "Install pm2..."
+npm i -g pm2
+cp processes.json /etc/pm2/conf.d/

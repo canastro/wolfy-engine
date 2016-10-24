@@ -13,4 +13,4 @@ echo "Install MongoDB..."
 apt-get install -y mongodb-org
 
 echo "Start MongoDB..."
-service mongod stop
+service mongod start
