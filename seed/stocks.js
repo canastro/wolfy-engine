@@ -10,31 +10,6 @@ const data = [{
     symbol: 'TSLA',
     name: 'Tesla'
 }];
-// , {
-//     symbol: 'FB',
-//     name: 'Facebook'
-// }, {
-//     symbol: 'COST',
-//     name: 'Costco Wholesale Corporation'
-// }, {
-//     symbol: 'LNKD',
-//     name: 'LinkedIn'
-// }, {
-//     symbol: 'BIDU',
-//     name: 'Baidu, Inc.'
-// }, {
-//     symbol: 'SBUX',
-//     name: 'Starbucks Corporation'
-// }, {
-//     symbol: 'TWTR',
-//     name: 'Twitter'
-// }, {
-//     symbol: 'SCTY',
-//     name: 'SolarCity'
-// }, {
-//     symbol: 'NXPI',
-//     name: 'NXP Semiconductors NV'
-// }];
 
 module.exports = function seedStocks() {
     winston.info('createStocks');

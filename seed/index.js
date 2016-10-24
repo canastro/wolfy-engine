@@ -8,7 +8,6 @@ const prices = require('./prices');
 const stocks = require('./stocks');
 const reports = require('./reports');
 const tweets = require('./tweets');
-const train = require('./train');
 const addPrice = require('./add_price');
 
 const program = require('commander')
