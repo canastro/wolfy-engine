@@ -3,14 +3,16 @@
 const winston = require('winston');
 const zmq = require('zmq');
 
+const ZMQ_PORT = process.env.ZMQ_PORT || 9998;
+
 module.exports = function () {
     return new Promise((resolve) => {
 
         const socket = zmq.socket('pub');
         socket.identity = 'publisher seedprice';
 
-        winston.info('connect to tcp://*:9998');
-        socket.bindSync('tcp://*:9998');
+        winston.info(`connect to tcp://*:${ZMQ_PORT}`);
+        socket.bindSync(`tcp://*:${ZMQ_PORT}`);
 
         const prices = {
             past: {

@@ -68,17 +68,6 @@ program
     });
 
 /**
- * @usage ./seed/index.js train --symbol TSLA
- */
-program
-    .command('train')
-    .description('train neural network')
-    .option('-s, --symbol [value]', 'Symbol')
-    .action((options) => {
-        before(false, () => train(options.symbol)).then(() => process.exit(0));
-    });
-
-/**
  * @usage ./seed/index.js addprice
  * Posts a message to zeromq with a new price
  */
