@@ -1,7 +1,7 @@
 'use strict';
 
 const winston = require('winston');
-const Price = require('../src/schema/price');
+const { Price } = require('wolfy-models');
 const ArtificialNeuralNetwork = require('../src/neural-network/artificial-neural-network');
 
 module.exports = function (symbol) {

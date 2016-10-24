@@ -9,7 +9,7 @@ module.exports = function (shipit) {
 
     shipit.initConfig({
         default: {
-            workspace: '~/shipit-workspace/wolfy-engine',
+            workspace: '/Users/ricardocanastro/shipit-workspace/wolfy-engine',
             deployTo,
             repositoryUrl: 'https://github.com/canastro/wolfy-engine.git',
             ignores: ['.git', 'node_modules'],
@@ -24,18 +24,21 @@ module.exports = function (shipit) {
     });
 
     // Listen to the on published event.
-    // This happens right after the symlink for current is established
     shipit.on('published', function(){
         shipit.start('post-publish');
     });
 
-    // Subsequent runs
-    // ================================================================
     shipit.task('post-publish', ['npm-install']);
 
     // npm install
     // ----------------------------------------------------------------
     shipit.blTask('npm-install', function(){
         return shipit.remote(`cd ${deployToCurrent} && npm install`);
+    });
+
+    // seed commands
+    // ----------------------------------------------------------------
+    shipit.task('seed-prices', function () {
+        return shipit.remote(`cd ${deployToCurrent} && ./seed/index.js price -i 30 -p 20 -r`);
     });
 };

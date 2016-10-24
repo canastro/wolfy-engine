@@ -1,7 +1,7 @@
 'use strict';
 
 const winston = require('winston');
-const Stock = require('../src/schema/stock');
+const { Stock } = require('wolfy-models');
 
 const data = [{
     symbol: 'AAPL',
