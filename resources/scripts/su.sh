@@ -4,6 +4,9 @@ apt-get update -y
 apt-get upgrade -y
 apt-get install build-essential libssl-dev -y
 
+echo "Installing htop..."
+apt-get install htop
+
 echo "Installing git..."
 apt-get install git -y
 
