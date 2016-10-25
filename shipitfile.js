@@ -28,12 +28,22 @@ module.exports = function (shipit) {
         shipit.start('post-publish');
     });
 
-    shipit.task('post-publish', ['npm-install']);
+    shipit.task('post-publish', ['clear-nodemodules', 'npm-install', 'pm2-save']);
 
     // npm install
     // ----------------------------------------------------------------
+    shipit.blTask('clear-nodemodules', function(){
+        return shipit.remote(`cd ${deployToCurrent} && rm -rf node_modules`);
+    });
+
     shipit.blTask('npm-install', function(){
         return shipit.remote(`cd ${deployToCurrent} && npm install`);
+    });
+
+    // pm2 commands
+    // ----------------------------------------------------------------
+    shipit.task('pm2-save', function () {
+        return shipit.remote('pm2 save');
     });
 
     // seed commands

@@ -1,5 +1,5 @@
 {
     "name": "wolfy-engine",
     "script": "/home/ubuntu/wolfy-engine/current/src/server.js",
-    "watch": true
+    "watch": false
 }
