@@ -9,7 +9,7 @@ const Engine = require('./engine');
 const boot = require('./boot');
 const engineWorker = require('./engine/worker');
 
-const DB_NAME = process.env.DB_NAME || 'stocks';
+const DB_NAME = process.env.DB_NAME || 'wolfy';
 
 const numCPUs = require('os').cpus().length;
 let workersCount = 0;

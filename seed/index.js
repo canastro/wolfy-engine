@@ -10,6 +10,8 @@ const reports = require('./reports');
 const tweets = require('./tweets');
 const addPrice = require('./add_price');
 
+const DB_NAME = process.env.DB_NAME || 'wolfy';
+
 const program = require('commander')
     .version('0.0.1')
     .option('-r, --reset', 'Reset database');
@@ -19,7 +21,7 @@ winston.add(winstonDailyRotateFile, {
 });
 
 function before(shouldReset, cb) {
-    boot('mongodb://localhost/stocks', {
+    boot(`mongodb://localhost/${DB_NAME}`, {
         env: 'development'
     });
 
