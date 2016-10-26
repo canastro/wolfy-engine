@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "export LC_ALL=en_US.UTF-8" >> ~/.bash_profile
 echo "export LANG=en_US.UTF-8" >> ~/.bash_profile
 echo "export TWITTER_CONSUMER_KEY=\"#REPLACE#\"" >> ~/.bash_profile
