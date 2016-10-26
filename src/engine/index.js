@@ -8,17 +8,13 @@ const ENGINE_CONFIG = {
     TWITTER: {
         cronTime: '58 * * * *'
     },
-    //Run price engine every 5 minutes => '1,6,11,16,21,26,31,36,41,46,51,56 * * * *'
+    //Run price engine every 30 minutes => '29,59 * * * *'
     PRICE: {
-        cronTime: '4,9,14,19,24,29,34,39,44,49,54,59 * * * *',
-        // isValid: () => {
-        //     const today = moment().isoWeekday();
-        //     return today !== 6 && today !== 7;
-        // },
+        cronTime: '29,59 * * * *',
         params: [{
             type: 'LAST_PERIOD',
             query: {
-                interval: 5,
+                interval: 30,
                 days: 1
             }
         }]
