@@ -5,7 +5,8 @@ const cheerio = require('cheerio');
 const sentiment = require('sentiment');
 const moment = require('moment-timezone');
 const request = require('request');
-const { Article, Stock } = require('wolfy-models');
+const Article = require('wolfy-models/src/schema/article');
+const Stock = require('wolfy-models/src/schema/stock');
 const dictionary = require('../../constants/dictionary');
 
 const config = [

@@ -2,7 +2,10 @@
 
 const winston = require('winston');
 const moment = require('moment');
-const { Tweet, Stock, Article, SentimentReport } = require('wolfy-models');
+const Article = require('wolfy-models/src/schema/article');
+const SentimentReport = require('wolfy-models/src/schema/sentiment-report');
+const Stock = require('wolfy-models/src/schema/stock');
+const Tweet = require('wolfy-models/src/schema/tweet');
 
 /**
  * @name buildQuery

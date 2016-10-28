@@ -3,7 +3,9 @@
 const winston = require('winston');
 const moment = require('moment-timezone');
 const request = require('request');
-const { Candle, Price, Stock } = require('wolfy-models');
+const Candle = require('wolfy-models/src/technical-analysis/candle');
+const Price = require('wolfy-models/src/schema/price');
+const Stock = require('wolfy-models/src/schema/stock');
 const zmq = require('zmq');
 
 const lastPeriod = require('../utils/date').lastPeriod;

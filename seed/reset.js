@@ -1,17 +1,16 @@
 'use strict';
 
 const winston = require('winston');
-const {
-    Article,
-    Price,
-    Job,
-    Rating,
-    Order,
-    SentimentReport,
-    Stock,
-    Subscriber,
-    Tweet
-} = require('wolfy-models');
+
+const Article = require('wolfy-models/src/schema/article');
+const Price = require('wolfy-models/src/schema/price');
+const Job = require('wolfy-models/src/schema/job');
+const Rating = require('wolfy-models/src/schema/rating');
+const Order = require('wolfy-models/src/schema/order');
+const SentimentReport = require('wolfy-models/src/schema/sentiment-report');
+const Stock = require('wolfy-models/src/schema/stock');
+const Subscriber = require('wolfy-models/src/schema/subscriber');
+const Tweet = require('wolfy-models/src/schema/tweet');
 
 module.exports =  function resetDatabase() {
     winston.info('resetDatabase');

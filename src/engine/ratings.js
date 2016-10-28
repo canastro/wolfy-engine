@@ -4,7 +4,8 @@ const winston = require('winston');
 const cheerio = require('cheerio');
 const moment = require('moment-timezone');
 const request = require('request');
-const { Stock, Rating } = require('wolfy-models');
+const Rating = require('wolfy-models/src/schema/rating');
+const Stock = require('wolfy-models/src/schema/stock');
 
 const UPGRADES_URLS = [
     'http://www.nasdaq.com/earnings/daily-analyst-recommendations.aspx',

@@ -4,7 +4,7 @@ const winston = require('winston');
 const cluster = require('cluster');
 const winstonDailyRotateFile = require('winston-daily-rotate-file');
 
-const { Job } = require('wolfy-models');
+const Job = require('wolfy-models/src/schema/job');
 const Engine = require('./engine');
 const boot = require('./boot');
 const engineWorker = require('./engine/worker');

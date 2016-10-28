@@ -2,7 +2,7 @@
 
 const winston = require('winston');
 const nodemailer = require('nodemailer');
-const { Subscriber } = require('wolfy-models');
+const Subscriber = require('wolfy-models/src/schema/subscriber');
 
 /**
  * @name buildURL

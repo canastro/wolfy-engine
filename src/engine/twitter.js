@@ -4,7 +4,8 @@ const winston = require('winston');
 const Twit = require('twit');
 const moment = require('moment');
 const sentiment = require('sentiment');
-const { Tweet, Stock } = require('wolfy-models');
+const Stock = require('wolfy-models/src/schema/stock');
+const Tweet = require('wolfy-models/src/schema/tweet');
 
 const dictionary = require('../constants/dictionary');
 
