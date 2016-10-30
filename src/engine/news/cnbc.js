@@ -10,10 +10,10 @@ module.exports = {
         date: '.note',
         href: 'a'
     },
-    getText: ($) => `
-        ${$('.story-header-left > .title').text()}
-        ${$('#article_body group').text()}
-    `,
+    getText: ($) => [
+        $('.story-header-left > .title').text(),
+        $('#article_body group').text(),
+    ],
     getList: ($) => $('.subsection').eq(1).find('li'),
     isDateValid: (now, text) => {
         const dateArray = text.split(' ').slice(0, 3);

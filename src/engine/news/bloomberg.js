@@ -8,10 +8,10 @@ module.exports = {
         date: '.news__story__published-at',
         href: 'a'
     },
-    getText: ($) => `
-        ${$('.lede-headline__highlighted').text()}
-        ${$('.article-body').text()}
-    `,
+    getText: ($) => [
+        $('.lede-headline__highlighted').text(),
+        $('.article-body').text()
+    ],
     getList: ($) => $('.news__state.active > .news__story'),
     isDateValid: (now, date) => {
         date = date.replace(/[^A-Z0-9\/]/ig, '');

@@ -25,9 +25,11 @@ const config = [
  * @param {number} sentiment
  * It stores in the DB the results
  */
-const store = (symbol, url, sentiment) => {
+const store = (symbol, url, title, text, sentiment) => {
     const article = new Article();
     article.symbol = symbol;
+    article.title = title.substring(0, 200);
+    article.text = text.substring(0, 400);
     article.url = url;
     article.sentiment = sentiment;
     article.save();
@@ -75,8 +77,8 @@ const fetchArticle = (config, stock, path) => {
         const $ = cheerio.load(html);
         const text = config.getText($, url);
 
-        const value = getSentiment(text);
-        store(stock.symbol, url, value);
+        const value = getSentiment(text.join(' '));
+        store(stock.symbol, url, text[0], text[1], value);
     });
 };
 

@@ -7,10 +7,10 @@ module.exports = {
     selectors: {
         href: 'a'
     },
-    getText: ($) => `
-        ${$('.article-headline').text()}
-        ${$('#articleText').text()}
-    `,
+    getText: ($) => [
+        $('.article-headline').text(),
+        $('#articleText').text()
+    ],
     getList: ($) => $('.feature'),
     isURLValid: () => true
 };

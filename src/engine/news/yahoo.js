@@ -45,10 +45,10 @@ module.exports = {
     getText: ($, url) => {
         const host = getHost(url);
 
-        return `
-            ${$(host.title).text()}
-            ${$(host.body).text()}
-        `;
+        return [
+            $(host.title).text(),
+            $(host.body).text()
+        ];
     },
     getList: ($) => $('#yfi_headlines .bd li'),
     isDateValid: (now, text) => {

@@ -10,23 +10,23 @@ module.exports = {
     },
     getText: ($, url) => {
         if (url.includes('marketwatch')) {
-            return `
-                ${$('#article-headline').text()}
-                ${$('#article-body').text()}
-            `;
+            return [
+                $('#article-headline').text(),
+                $('#article-body').text()
+            ];
         }
 
         if (url.includes('blogs.wsj.com')) {
-            return `
-                ${$('.wsj-article-headline').text()}
-                ${$('.article-wrap').text()}
-            `;
+            return [
+                $('.wsj-article-headline').text(),
+                $('.article-wrap').text()
+            ];
         }
 
-        return `
-            ${$('.wsj-article-headline').text()}
-            ${$('.wsj-snippet-body').text()}
-        `;
+        return [
+            $('.wsj-article-headline').text(),
+            $('.wsj-snippet-body').text()
+        ];
     },
     getList: ($) => $('#newsSummary_c > li'),
     isDateValid: (now, text) => {
