@@ -1,6 +1,9 @@
 const winston = require('winston');
 
-const isEnvVarSet = key => !process.env[key];
+const isEnvVarSet = key => {
+    winston.info(`${key} ==> ${process.env[key]}`);
+    return !!process.env[key];
+};
 //validate all necessary env vars are set:
 const envVars = [
     'ZMQ_PORT',
