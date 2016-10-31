@@ -11,17 +11,17 @@ module.exports = (uri, config, cb) => {
         mongoose.set('debug', true);
     }
 
-    db.on('connecting', () => winston.info(`Connecting to '${config.database }'`));
+    db.on('connecting', () => winston.info(`Connecting to '${uri}'`));
 
-    db.on('connected', () => winston.info(`Connected to '${config.database }'`));
+    db.on('connected', () => winston.info(`Connected to '${uri}'`));
 
     db.on('open', () => winston.info('Connection opened!'));
 
     db.on('close', () => winston.info('Connection closed.'));
 
-    db.on('disconnected', () => winston.info(`Disconnected from '${config.database }'`));
+    db.on('disconnected', () => winston.info(`Disconnected from '${uri}'`));
 
-    db.on('reconnected', () => winston.info(`Reconnected to '${config.database }'`));
+    db.on('reconnected', () => winston.info(`Reconnected to '${uri}'`));
 
     db.on('error', () => {
         winston.error('Error connecting to database.');

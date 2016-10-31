@@ -10,7 +10,7 @@ const ENGINE_CONFIG = {
     },
     //Run price engine every 30 minutes => '29,59 * * * *'
     PRICE: {
-        cronTime: '29,59 * * * *',
+        cronTime: '4,9,14,19,24,29,34,39,44,49,54,59 * * * *',
         params: [{
             type: 'LAST_PERIOD',
             query: {

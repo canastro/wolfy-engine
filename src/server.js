@@ -8,6 +8,7 @@ const Job = require('wolfy-models/src/schema/job');
 const Engine = require('./engine');
 const boot = require('./boot');
 const engineWorker = require('./engine/worker');
+const isEnvValid = require('./utils/env');
 
 const DB_NAME = process.env.DB_NAME || 'wolfy';
 
@@ -17,6 +18,10 @@ let workersCount = 0;
 boot(`mongodb://localhost/${DB_NAME}`, {
     env: 'development'
 });
+
+if (!isEnvValid()) {
+    throw 'Environment is Invalid!';
+}
 
 /**
  * @name onWorkerExit
