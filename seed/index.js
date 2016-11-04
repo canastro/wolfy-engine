@@ -33,7 +33,7 @@ function before(shouldReset, cb) {
 }
 
 /**
- * @usage ./seed/index.js price -i 30 -p 20 -r
+ * @usage ./seed/index.js price -i 5 -p 20 -r
  */
 program
     .command('price')

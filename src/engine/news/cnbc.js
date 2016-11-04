@@ -12,7 +12,7 @@ module.exports = {
     },
     getText: ($) => [
         $('.story-header-left > .title').text(),
-        $('#article_body group').text(),
+        $('#article_body .group').text(),
     ],
     getList: ($) => $('.subsection').eq(1).find('li'),
     isDateValid: (now, text) => {
