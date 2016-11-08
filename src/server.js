@@ -16,7 +16,7 @@ const numCPUs = require('os').cpus().length;
 let workersCount = 0;
 
 boot(`mongodb://localhost/${DB_NAME}`, {
-    env: 'development'
+    env: process.env.NODE_ENV || 'development'
 });
 
 if (!isEnvValid()) {
