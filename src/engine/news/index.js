@@ -26,10 +26,14 @@ const config = [
  * It stores in the DB the results
  */
 const store = (symbol, url, title, text, sentiment) => {
+    if (!title && !text) {
+        return null;
+    }
+
     const article = new Article();
     article.symbol = symbol;
-    article.title = title.substring(0, 200);
-    article.text = text.substring(0, 400);
+    article.title = title ? title.substring(0, 200) : '';
+    article.text = text ? text.substring(0, 400) : '';
     article.url = url;
     article.sentiment = sentiment;
     article.save();
